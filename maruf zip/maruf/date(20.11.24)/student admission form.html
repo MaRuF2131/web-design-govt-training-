@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Student Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 450px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .gender-group, .course-group, .hobby-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .hobby-group label {
+            margin: 0;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .form-footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        input[type="radio"],input[type="checkbox"]{
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Admission Form</h2>
+        <form action="#" method="POST">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Parent/Guardian Name -->
+            <div class="form-group">
+                <label for="guardian">Parent/Guardian Name:</label>
+                <input type="text" id="guardian" name="guardian" placeholder="Enter guardian's name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Alternate Phone -->
+            <div class="form-group">
+                <label for="altphone">Alternate Phone Number:</label>
+                <input type="tel" id="altphone" name="altphone" placeholder="Enter alternate phone number">
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="gender-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female" required> Female</label>
+                    <label><input type="radio" name="gender" value="Other" required> Other</label>
+                </div>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+
+                        <!-- Course -->
+                        <div class="form-group">
+                            <label for="course">Select Course:</label>
+                            <select id="course" name="course" required>
+                                <option value="">-- Choose a course --</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Physics">Physics</option>
+                                <option value="Business Administration">Business Administration</option>
+                                <option value="English Literature">English Literature</option>
+                            </select>
+                        </div>
+            
+                        <!-- Previous Education Details -->
+                        <div class="form-group">
+                            <h3>Previous Education Details</h3>
+                            <label for="school">School/College Name:</label>
+                            <input type="text" id="school" name="school" placeholder="Enter school/college name" required>
+            
+                            <label for="qualification">Qualification Obtained:</label>
+                            <input type="text" id="qualification" name="qualification" placeholder="Enter qualification (e.g., High School, Diploma)" required>
+            
+                            <label for="passingYear">Year of Passing:</label>
+                            <input type="number" id="passingYear" name="passingYear" placeholder="Enter year of passing" required>
+            
+                            <label for="percentage">Percentage/Grade:</label>
+                            <input type="text" id="percentage" name="percentage" placeholder="Enter your percentage/grade" required>
+                        </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+
+            <!-- Nationality -->
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" required>
+            </div>
+
+            <!-- Hobbies -->
+            <div class="form-group">
+                <label>Hobbies/Interests:</label>
+                <div class="hobby-group">
+                    <label><input type="checkbox" name="hobbies" value="Sports"> Sports</label>
+                    <label><input type="checkbox" name="hobbies" value="Music"> Music</label>
+                    <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+                    <label><input type="checkbox" name="hobbies" value="Traveling"> Traveling</label>
+                </div>
+            </div>
+
+            <!-- Upload Photo -->
+            <div class="form-group">
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Application</button>
+        </form>
+        <div class="form-footer">
+            Already registered? <a href="#">Login here</a>.
+        </div>
+    </div>
+</body>
+</html>
