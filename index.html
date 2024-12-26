@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color:beige;
+        }
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+        }
+        h1{
+            width: 100%;
+            text-align: center;
+        }
+        table{
+            margin-top: 20px;
+            margin-bottom: 50px;
+            width: 100%;
+            height: auto;
+            border: 2px solid gray;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: antiquewhite;
+            border: 2px solid gray;
+            padding: 5px;
+        }
+        td{
+            border: 2px solid black;
+        }
+        tr{
+            background-color:rgb(188, 180, 180);
+        }
+        tr:nth-child(even):hover{
+            background-color: antiquewhite;
+        }
+        table input{
+             padding: 5px;
+             width: 100%;
+             height: 100%;
+            background-color: transparent;
+            border: none;
+        }
 
+        input:focus{
+            box-shadow:none; /* Add a glowing effect */
+            outline: none; /* Remove default browser outline */
+        }
+
+        #insert,#row,#btn{
+            width: 100px; 
+            height:30px; 
+            padding: 5px; 
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #insert{
+            position: fixed;
+            right: 10px;
+            bottom:10px;
+        }
+        #row{
+            width: 200px;
+        }
+        caption{
+            color:hotpink;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter row number to create table like excel sheet</h1>
+    <input type="number" name="" id="row" placeholder="Enter row">
+    <input type="submit" value="Create" id="btn" accesskey="e">
+
+ <table>
+    <caption>Excel Sheet</caption>
+    <thead>
+       <tr>
+        <th>NAME</th>
+        <th>PHONE</th>
+        <th>EMAIL</th>
+       </tr>
+    </thead>
+    <tbody>
+    </tbody>
+ </table>
+   <input type="submit" value="Insert" id="insert">
+  <script>
+     document.querySelector("#btn").addEventListener("click",function(){
+            let row= document.querySelector("#row").value;
+            let i=0;
+            let parent=document.querySelector("tbody");
+            parent.innerHTML='';
+            while(i<row){
+                 let r=document.createElement("tr");
+                  let c1=document.createElement("td");
+                  let c2=document.createElement("td");
+                  let c3=document.createElement("td");
+                  let input=document.createElement("input");
+                      input.type="text";
+                      input.placeholder="Enter name";
+                  let input1=document.createElement("input");
+                      input1.type="text";
+                      input1.placeholder="Enter number";
+                  let input2=document.createElement("input");
+                      input2.type="email";
+                      input2.placeholder="Enter email";
+                      c1.appendChild(input);
+                      c2.appendChild(input1);
+                      c3.appendChild(input2);
+                  /*c1.textContent="Maruf";
+                  c2.textContent="01770887721";
+                  c3.textContent="mmmmmmm";*/
+                  r.appendChild(c1);
+                  r.appendChild(c2);
+                  r.appendChild(c3);
+                  parent.append(r);
+                  i++;
+            }
+     })
+  </script>
+</body>
+</html>
